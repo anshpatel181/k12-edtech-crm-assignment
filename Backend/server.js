@@ -22,6 +22,8 @@ app.use(cookieParser())
 app.use("/api/inquiry", userRoutes);
 app.use("/api/auth", authRoutes);
 
-app.listen(5000, () => {
-  console.log("server is running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
