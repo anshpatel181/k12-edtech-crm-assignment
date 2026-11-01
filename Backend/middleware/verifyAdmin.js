@@ -6,6 +6,9 @@ export const verifyAdmin = async (req, res, next) => {
     try {
         
         const token = req.cookies.__adminToken
+
+        console.log("Cookies received:", Object.keys(req.cookies));
+console.log("Admin token received:", Boolean(token));
       
         if (!token) {
           return res.status(401).json({ success: false, message: "Access Denied" });
